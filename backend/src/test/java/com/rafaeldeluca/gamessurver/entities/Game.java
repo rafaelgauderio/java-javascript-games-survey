@@ -1,36 +1,45 @@
 package com.rafaeldeluca.gamessurver.entities;
 
 import java.io.Serializable;
+import java.util.LinkedList;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table (name = "tb_game")
+@Table(name = "tb_game")
 public class Game implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
-	private Platform platfomr;
-	private Genre renge;
+	private Platform platfomr;	
 	
-	public Game () {
-		
+	private List<Record> records = new LinkedList<Record>();
+
+	@ManyToOne
+	@JoinColumn(name = "genre_id")
+	private Genre genre;
+
+	public Game() {
+
 	}
 
-	public Game(Long id, String title, Platform platfomr, Genre renge) {
+	public Game(Long id, String title, Platform platfomr, Genre genre) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.platfomr = platfomr;
-		this.renge = renge;
+		this.genre = genre;
 	}
 
 	public Long getId() {
@@ -58,13 +67,25 @@ public class Game implements Serializable {
 	}
 
 	public Genre getRenge() {
-		return renge;
+		return genre;
 	}
 
-	public void setRenge(Genre renge) {
-		this.renge = renge;
+	public void setRenge(Genre genre) {
+		this.genre = genre;
+	}	
+	
+
+	public List<Record> getRecords() {
+		return records;
 	}
 
+	/*
+	public void setRecords(List<Record> records) {
+		this.records = records;
+	}
+	*/
+
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -92,12 +113,7 @@ public class Game implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Game [id= " + id + ", title= " + title + ", platfomr= " + platfomr + ", renge= " + renge + "]";
+		return "Game [id= " + id + ", title= " + title + ", platfomr= " + platfomr + ", genre= " + genre + "]";
 	}
-	
-	
-	
-	
-	
 
 }

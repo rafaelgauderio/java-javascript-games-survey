@@ -21,7 +21,7 @@ public class Genre implements Serializable {
 	private Long id;
 	private String name;
 	private List<Game> games = new LinkedList<Game>();
-	private List<Record> records = new LinkedList<Record>();
+	
 
 	public Genre() {
 	}
@@ -55,17 +55,8 @@ public class Genre implements Serializable {
 	public void setGames(List<Game> games) {
 		this.games = games;
 	}
-	*/
-	
-	public List<Record> getRecords () {
-		return records;
-	}
-	
-	/*
-	public void setRecords(List<Record> records) {
-		this.records = records;
-	}
-	*/
+	*/	
+
 
 	@Override
 	public int hashCode() {
@@ -94,10 +85,6 @@ public class Genre implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Genre [id= " + id + ", name= " + name + ", games= " + games + ", records= " + records + "]";
+		return "Genre [id= " + id + ", name= " + name + ", games= " + games + "]";
 	}
-
-	
-	
-
 }

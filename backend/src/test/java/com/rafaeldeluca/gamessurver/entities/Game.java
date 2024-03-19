@@ -1,7 +1,11 @@
 package com.rafaeldeluca.gamessurver.entities;
 
-public class Game {
+import java.io.Serializable;
 
+public class Game implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
 	private Long id;
 	private String title;
 	private Platform platfomr;
@@ -75,6 +79,13 @@ public class Game {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Game [id= " + id + ", title= " + title + ", platfomr= " + platfomr + ", renge= " + renge + "]";
+	}
+	
+	
 	
 	
 	

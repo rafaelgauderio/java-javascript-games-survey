@@ -1,24 +1,29 @@
 package com.rafaeldeluca.gamessurver.entities;
 
+import java.time.Instant;
 import java.io.Serializable;
-import java.util.LinkedList;
-import java.util.List;
 
-public class Genre implements Serializable {
-
+public class Record implements Serializable {	
+	
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
 	private String name;
-	private List<Game> games = new LinkedList<Game>();
-	private List<Record> records = new LinkedList<Record>();
-
-	public Genre() {
+	private Integer age;
+	private Instant moment;
+	private Game game;
+	
+	public Record () {
+		
 	}
 
-	public Genre(Long id, String name) {
+	public Record(Long id, String name, Integer age, Instant moment, Game game) {
+		super();
 		this.id = id;
 		this.name = name;
+		this.age = age;
+		this.moment = moment;
+		this.game = game;
 	}
 
 	public Long getId() {
@@ -35,27 +40,31 @@ public class Genre implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
-	}	
-
-	public List<Game> getGames() {
-		return games;
 	}
 
-	/* Não usar métodos set para coleções
-	public void setGames(List<Game> games) {
-		this.games = games;
+	public Integer getAge() {
+		return age;
 	}
-	*/
-	
-	public List<Record> getRecords () {
-		return records;
+
+	public void setAge(Integer age) {
+		this.age = age;
 	}
-	
-	/*
-	public void setRecords(List<Record> records) {
-		this.records = records;
+
+	public Instant getMoment() {
+		return moment;
 	}
-	*/
+
+	public void setMoment(Instant moment) {
+		this.moment = moment;
+	}
+
+	public Game getGame() {
+		return game;
+	}
+
+	public void setGame(Game game) {
+		this.game = game;
+	}
 
 	@Override
 	public int hashCode() {
@@ -73,7 +82,7 @@ public class Genre implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Genre other = (Genre) obj;
+		Record other = (Record) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -84,9 +93,12 @@ public class Genre implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Genre [id= " + id + ", name= " + name + ", games= " + games + ", records= " + records + "]";
+		return "Record [id= " + id + ", name= " + name + ", age= " + age + ", moment= " + moment + ", game= " + game + "]";
 	}
-
+	
+	
+	
+	
 	
 	
 

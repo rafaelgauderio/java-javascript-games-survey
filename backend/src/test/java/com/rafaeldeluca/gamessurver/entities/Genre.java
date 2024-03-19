@@ -1,6 +1,8 @@
 package com.rafaeldeluca.gamessurver.entities;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.LinkedList;
 
 public class Genre implements Serializable {
 
@@ -8,6 +10,7 @@ public class Genre implements Serializable {
 
 	private Long id;
 	private String name;
+	private List<Game> games = new LinkedList<Game>();
 
 	public Genre() {
 	}
@@ -31,7 +34,17 @@ public class Genre implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}	
+
+	public List<Game> getGames() {
+		return games;
 	}
+
+	/* Não usar métodos set para coleções
+	public void setGames(List<Game> games) {
+		this.games = games;
+	}
+	*/
 
 	@Override
 	public int hashCode() {
@@ -60,7 +73,9 @@ public class Genre implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Genre [id=" + id + ", name=" + name + "]";
+		return "Genre [id=" + id + ", name=" + name + ", games=" + games + "]";
 	}
+
+	
 
 }

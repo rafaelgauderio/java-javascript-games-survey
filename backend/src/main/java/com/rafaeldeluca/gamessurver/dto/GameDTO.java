@@ -1,10 +1,14 @@
 package com.rafaeldeluca.gamessurver.dto;
 
+import java.io.Serializable;
+
 import com.rafaeldeluca.gamessurver.entities.Game;
 import com.rafaeldeluca.gamessurver.entities.Platform;
 
-public class GameDTO {
-
+public class GameDTO implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
 	private Long id;
 	private String title;
 	private Platform platform;

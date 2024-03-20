@@ -44,10 +44,12 @@
 	<artifactId>spring-boot-starter-validation</artifactId>
 </dependency>
 
+<!-- desabilitando temporariamente o spring security para testar o banco  de dados h2
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter-security</artifactId>
 </dependency>
+-->
 		<dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-test</artifactId>

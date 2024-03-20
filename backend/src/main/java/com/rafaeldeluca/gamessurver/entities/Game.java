@@ -23,7 +23,7 @@ public class Game implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
-	private Platform platfomr;	
+	private Platform platform;	
 	
 	@OneToMany(mappedBy = "game")
 	private List<Record> records = new LinkedList<Record>();
@@ -36,11 +36,11 @@ public class Game implements Serializable {
 
 	}
 
-	public Game(Long id, String title, Platform platfomr, Genre genre) {
+	public Game(Long id, String title, Platform platform, Genre genre) {
 		super();
 		this.id = id;
 		this.title = title;
-		this.platfomr = platfomr;
+		this.platform = platform;
 		this.genre = genre;
 	}
 
@@ -61,11 +61,11 @@ public class Game implements Serializable {
 	}
 
 	public Platform getPlatfomr() {
-		return platfomr;
+		return platform;
 	}
 
-	public void setPlatfomr(Platform platfomr) {
-		this.platfomr = platfomr;
+	public void setPlatform (Platform platform) {
+		this.platform = platform;
 	}
 
 	public Genre getRenge() {
@@ -115,7 +115,7 @@ public class Game implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Game [id= " + id + ", title= " + title + ", platfomr= " + platfomr + ", genre= " + genre + "]";
+		return "Game [id= " + id + ", title= " + title + ", platform= " + platform + ", genre= " + genre + "]";
 	}
 
 }

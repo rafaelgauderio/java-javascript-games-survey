@@ -35,6 +35,5 @@ public class RecordService {
 		record = recordRepository.save(record);
 		RecordCompleteDTO recordCompleteDTO = new RecordCompleteDTO(record);
 		return recordCompleteDTO;
-
 	}
 }

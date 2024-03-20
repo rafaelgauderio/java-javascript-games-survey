@@ -27,11 +27,11 @@ public class Game implements Serializable {
 	private String title;
 	private Platform platform;	
 	
-	@JsonIgnore
+	//@JsonIgnore
 	@OneToMany(mappedBy = "game")
 	private List<Record> records = new LinkedList<Record>();
 
-	@JsonIgnore // para evitar loop infinito na requisição GET
+	//@JsonIgnore // para evitar loop infinito na requisição GET
 	@ManyToOne
 	@JoinColumn(name = "genre_id")
 	private Genre genre;

@@ -10,7 +10,7 @@ public class GamessurveyApplication {
 		startApplication(args);
 	}
 
-	public static void startApplication(String[] args) {
-		SpringApplication.run(GamessurveyApplication.class, args);
+	public static void startApplication(String[] params) {
+		SpringApplication.run(GamessurveyApplication.class, params);
 	}
 }

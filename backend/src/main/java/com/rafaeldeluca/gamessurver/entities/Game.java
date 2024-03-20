@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,9 +27,11 @@ public class Game implements Serializable {
 	private String title;
 	private Platform platform;	
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "game")
 	private List<Record> records = new LinkedList<Record>();
 
+	@JsonIgnore // para evitar loop infinito na requisição GET
 	@ManyToOne
 	@JoinColumn(name = "genre_id")
 	private Genre genre;

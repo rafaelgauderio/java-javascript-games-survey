@@ -1,10 +1,17 @@
 package com.rafaeldeluca.gamessurvey.controllers;
 
+import java.time.Instant;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rafaeldeluca.gamessurvey.dto.RecordCompleteDTO;
@@ -23,5 +30,34 @@ public class RecordController {
 		RecordCompleteDTO newCompleteRecordDTO = new RecordCompleteDTO();
 		newCompleteRecordDTO = recordService.insertRecord(recordInsertDTO);
 		return ResponseEntity.ok().body(newCompleteRecordDTO);
+	}
+
+	@GetMapping
+	public ResponseEntity<List<RecordCompleteDTO>> findAllRecords(
+			@RequestParam(value = "page", defaultValue = "0") Integer page,
+			@RequestParam(value = "linesPerPAge", defaultValue = "0") Integer linesPerPage,
+			@RequestParam(value = "orderBy", defaultValue = "moment") String orderBy,
+			@RequestParam(value = "direction", defaultValue = "DESC") String direction,
+			@RequestParam(value = "min", defaultValue = "") String min,
+			@RequestParam(value = "max", defaultValue = "") String max) {
+
+		Instant minimumDate;
+
+		if ("".equals(minimumDate) == true) {
+			minimumDate = null;
+		} else {
+			minimumDate = Instant.parse(min);
+		}
+
+		Instant maximumDate = ("".equals(max)) ? null : Instant.parse(max);
+
+		if (linesPerPage == 0) {
+			linesPerPage = Integer.MAX_VALUE;
+		}
+
+		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
+
+		List<RecordCompleteDTO> recordsList = recordService.findRecordsByMoment(minimumDate, maximumDate, pageRequest);
+		return ResponseEntity.ok().body(recordsList);
 	}
 }

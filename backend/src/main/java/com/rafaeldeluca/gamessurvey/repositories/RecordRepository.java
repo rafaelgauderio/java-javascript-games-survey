@@ -20,7 +20,7 @@ public interface RecordRepository extends JpaRepository<Record, Long> {
 			+ "WHERE "
 			+ "(:minimum IS NULL OR objectRecord.moment >= :minimum) "
 			+ "AND "
-			+ "(:maximum IS NULL OR objectRecord.moment <= :maximum )"
+			+ "(:maximum IS NULL OR objectRecord.moment <= :maximum)"
 			) 
 	Page<Record> findRecordsByMoments (Instant minimum, Instant maximum, Pageable pageable);
 

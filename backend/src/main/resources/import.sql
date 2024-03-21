@@ -1,4 +1,4 @@
-NSERT INTO tb_genre (name) VALUES ('Shooter');
+INSERT INTO tb_genre (name) VALUES ('Shooter');
 INSERT INTO tb_genre (name) VALUES ('MOBA');
 INSERT INTO tb_genre (name) VALUES ('RPG');
 INSERT INTO tb_genre (name) VALUES ('Battle Royale');

@@ -1,9 +1,9 @@
 package com.rafaeldeluca.gamessurvey.controllers;
 
 import java.time.Instant;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.http.ResponseEntity;
@@ -33,7 +33,7 @@ public class RecordController {
 	}
 
 	@GetMapping
-	public ResponseEntity<List<RecordCompleteDTO>> findAllRecords(
+	public ResponseEntity<Page<RecordCompleteDTO>> findAllRecords(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "linesPerPAge", defaultValue = "0") Integer linesPerPage,
 			@RequestParam(value = "orderBy", defaultValue = "moment") String orderBy,
@@ -41,13 +41,7 @@ public class RecordController {
 			@RequestParam(value = "min", defaultValue = "") String min,
 			@RequestParam(value = "max", defaultValue = "") String max) {
 
-		Instant minimumDate;
-
-		if ("".equals(minimumDate) == true) {
-			minimumDate = null;
-		} else {
-			minimumDate = Instant.parse(min);
-		}
+		Instant minimumDate = ("".equals(min)) ? null : Instant.parse(min);		
 
 		Instant maximumDate = ("".equals(max)) ? null : Instant.parse(max);
 
@@ -57,7 +51,7 @@ public class RecordController {
 
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
 
-		List<RecordCompleteDTO> recordsList = recordService.findRecordsByMoment(minimumDate, maximumDate, pageRequest);
-		return ResponseEntity.ok().body(recordsList);
+		Page<RecordCompleteDTO> recordsPage = recordService.findRecordsByMoments(minimumDate, maximumDate, pageRequest);
+		return ResponseEntity.ok().body(recordsPage);
 	}
 }

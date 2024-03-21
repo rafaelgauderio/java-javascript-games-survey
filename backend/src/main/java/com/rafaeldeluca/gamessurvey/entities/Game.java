@@ -1,4 +1,4 @@
-package com.rafaeldeluca.gamessurver.entities;
+package com.rafaeldeluca.gamessurvey.entities;
 
 import java.io.Serializable;
 import java.util.LinkedList;

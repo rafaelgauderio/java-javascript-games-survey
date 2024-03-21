@@ -1,10 +1,10 @@
-package com.rafaeldeluca.gamessurver.dto;
+package com.rafaeldeluca.gamessurvey.dto;
 
 import java.io.Serializable;
 import java.time.Instant;
 
-import com.rafaeldeluca.gamessurver.entities.Platform;
-import com.rafaeldeluca.gamessurver.entities.Record;
+import com.rafaeldeluca.gamessurvey.entities.Platform;
+import com.rafaeldeluca.gamessurvey.entities.Record;
 
 public class RecordCompleteDTO implements Serializable {
 	

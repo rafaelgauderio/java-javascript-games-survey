@@ -1,9 +1,9 @@
-package com.rafaeldeluca.gamessurver.repositories;
+package com.rafaeldeluca.gamessurvey.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.rafaeldeluca.gamessurver.entities.Game;
+import com.rafaeldeluca.gamessurvey.entities.Game;
 
 @Repository
 public interface GameRepository extends JpaRepository <Game, Long>{

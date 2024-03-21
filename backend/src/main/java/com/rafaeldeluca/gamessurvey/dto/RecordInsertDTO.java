@@ -1,4 +1,4 @@
-package com.rafaeldeluca.gamessurver.dto;
+package com.rafaeldeluca.gamessurvey.dto;
 
 import java.io.Serializable;
 

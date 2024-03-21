@@ -1,4 +1,4 @@
-package com.rafaeldeluca.gamessurver.controllers;
+package com.rafaeldeluca.gamessurvey.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rafaeldeluca.gamessurver.dto.RecordCompleteDTO;
-import com.rafaeldeluca.gamessurver.dto.RecordInsertDTO;
-import com.rafaeldeluca.gamessurver.services.RecordService;
+import com.rafaeldeluca.gamessurvey.dto.RecordCompleteDTO;
+import com.rafaeldeluca.gamessurvey.dto.RecordInsertDTO;
+import com.rafaeldeluca.gamessurvey.services.RecordService;
 
 @RestController
 @RequestMapping(value = "/records")

@@ -1,4 +1,4 @@
-package com.rafaeldeluca.gamessurver.services;
+package com.rafaeldeluca.gamessurvey.services;
 
 import java.time.Instant;
 
@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rafaeldeluca.gamessurver.dto.RecordCompleteDTO;
-import com.rafaeldeluca.gamessurver.dto.RecordInsertDTO;
-import com.rafaeldeluca.gamessurver.entities.Record;
-import com.rafaeldeluca.gamessurver.repositories.GameRepository;
-import com.rafaeldeluca.gamessurver.repositories.RecordRepository;
+import com.rafaeldeluca.gamessurvey.dto.RecordCompleteDTO;
+import com.rafaeldeluca.gamessurvey.dto.RecordInsertDTO;
+import com.rafaeldeluca.gamessurvey.entities.Record;
+import com.rafaeldeluca.gamessurvey.repositories.GameRepository;
+import com.rafaeldeluca.gamessurvey.repositories.RecordRepository;
 
 @Service
 public class RecordService {

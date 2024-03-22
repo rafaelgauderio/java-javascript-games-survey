@@ -16,11 +16,8 @@ import com.rafaeldeluca.gamessurvey.repositories.GameRepository;
 import com.rafaeldeluca.gamessurvey.repositories.RecordRepository;
 
 @Service
-public class RecordService {
-
-	/*
-	 * @Value("${cors.origins}") private String corsOrigins;
-	 */
+public class RecordService {	
+	
 
 	@Value("${spring.profiles.active}")
 	private String environment;

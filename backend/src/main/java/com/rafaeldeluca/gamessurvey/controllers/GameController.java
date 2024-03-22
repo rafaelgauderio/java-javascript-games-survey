@@ -1,4 +1,4 @@
-package com.rafaeldeluca.gamessurver.controllers;
+package com.rafaeldeluca.gamessurvey.controllers;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rafaeldeluca.gamessurver.dto.GameDTO;
-import com.rafaeldeluca.gamessurver.services.GameService;
+import com.rafaeldeluca.gamessurvey.dto.GameDTO;
+import com.rafaeldeluca.gamessurvey.services.GameService;
 
 @RestController
 @RequestMapping(value = "/games")

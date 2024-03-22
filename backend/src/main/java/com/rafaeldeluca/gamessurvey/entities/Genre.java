@@ -1,44 +1,40 @@
-package com.rafaeldeluca.gamessurver.entities;
+package com.rafaeldeluca.gamessurvey.entities;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.LinkedList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name= "tb_record")
-public class Record implements Serializable {	
-	
+@Table(name = "tb_genre")
+public class Genre implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	private Integer age;
-	private Instant moment;
 	
-	@ManyToOne
-	@JoinColumn(name = "game_id")
-	private Game game;
+	@JsonIgnore
+	@OneToMany(mappedBy = "genre")
+	private List<Game> games = new LinkedList<Game>();
 	
-	public Record () {
-		
+
+	public Genre() {
 	}
 
-	public Record(Long id, String name, Integer age, Instant moment, Game game) {
-		super();
+	public Genre(Long id, String name) {
 		this.id = id;
 		this.name = name;
-		this.age = age;
-		this.moment = moment;
-		this.game = game;
 	}
 
 	public Long getId() {
@@ -55,31 +51,18 @@ public class Record implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}	
+
+	public List<Game> getGames() {
+		return games;
 	}
 
-	public Integer getAge() {
-		return age;
+	/* Não usar métodos set para coleções
+	public void setGames(List<Game> games) {
+		this.games = games;
 	}
+	*/	
 
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-
-	public Instant getMoment() {
-		return moment;
-	}
-
-	public void setMoment(Instant moment) {
-		this.moment = moment;
-	}
-
-	public Game getGame() {
-		return game;
-	}
-
-	public void setGame(Game game) {
-		this.game = game;
-	}
 
 	@Override
 	public int hashCode() {
@@ -97,7 +80,7 @@ public class Record implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Record other = (Record) obj;
+		Genre other = (Genre) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -108,7 +91,6 @@ public class Record implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Record [id= " + id + ", name= " + name + ", age= " + age + ", moment= " + moment + ", game= " + game + "]";
+		return "Genre [id= " + id + ", name= " + name + ", games= " + games + "]";
 	}
-	
 }

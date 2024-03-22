@@ -1,9 +1,9 @@
-package com.rafaeldeluca.gamessurver.dto;
+package com.rafaeldeluca.gamessurvey.dto;
 
 import java.io.Serializable;
 
-import com.rafaeldeluca.gamessurver.entities.Game;
-import com.rafaeldeluca.gamessurver.entities.Platform;
+import com.rafaeldeluca.gamessurvey.entities.Game;
+import com.rafaeldeluca.gamessurvey.entities.Platform;
 
 public class GameDTO implements Serializable {
 	

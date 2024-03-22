@@ -3,6 +3,7 @@ package com.rafaeldeluca.gamessurvey.services;
 import java.time.Instant;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,13 @@ import com.rafaeldeluca.gamessurvey.repositories.RecordRepository;
 
 @Service
 public class RecordService {
+
+	/*
+	 * @Value("${cors.origins}") private String corsOrigins;
+	 */
+
+	@Value("${spring.profiles.active}")
+	private String environment;
 
 	@Autowired
 	private RecordRepository recordRepository;
@@ -43,6 +51,11 @@ public class RecordService {
 	@Transactional(readOnly = true)
 	public Page<RecordCompleteDTO> findRecordsByMoments(Instant minimumDate, Instant maximumDate,
 			PageRequest pageRequest) {
+		if (environment == "dev" || environment == "prod") {
+			return recordRepository.findRecordsByMomentsPostgresql(minimumDate, maximumDate, pageRequest)
+					.map((rec) -> new RecordCompleteDTO(rec));
+		}
+
 		return recordRepository.findRecordsByMoments(minimumDate, maximumDate, pageRequest)
 				.map((rec) -> new RecordCompleteDTO(rec));
 	}

@@ -8,7 +8,7 @@ function Header({ message }: Params) {
 
         <h2 className="header">
             <h3>Bem vindo {message} ao início do projeto</h3>
-            <p>Início front-web projeto games survey</p>S
+            <p>Início front-web projeto games survey</p>
         </h2>
     );
 }

@@ -4,7 +4,7 @@ import Header from './components/Header';
 function App() {
   return (
     <div>
-      <Header message={"Rafael de Luca"} />
+      <Header />
     </div>
   );
 }

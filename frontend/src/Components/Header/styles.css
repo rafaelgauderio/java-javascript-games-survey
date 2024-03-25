@@ -1,0 +1,26 @@
+.main-header {
+    height: 30px;
+    padding: 20px 40px;
+    display: flex;
+    background-color: var(--color-darker-gray);
+  }
+  
+  .logo-text {
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: 15px;
+  }
+  
+  .logo-text-first {
+    color: var(--color-light-orange);
+  }
+  
+  .logo-text-second {
+    color: var(--color-white);
+  }
+  
+  @media (max-width: 850px) {
+    .main-header {
+      justify-content: center;
+    }
+  }

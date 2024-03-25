@@ -45,3 +45,7 @@ button:focus {
   outline: none;
 }
 
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}

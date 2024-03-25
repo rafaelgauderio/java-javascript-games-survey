@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+
+:root {
+  --color-light-blue: #01d5ff;
+  --color-light-orange: #ed7957;
+  --color-dark-gray: #3c5d67;
+  --color-darker-gray: #47474f;
+  --color-dark-blue: #0b1f39;
+  --color-white: #fff;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: "Play", sans-serif, "Segoe UI", Tahoma, Geneva, Verdana,
+    sans-serif;
+}
+
+body {
+  background-color: var(--color-dark-blue);
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-primary {
+  color: var(--color-light-blue);
+}
+
+.text-secondary {
+  color: var(--color-light-orange);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+

@@ -3,10 +3,11 @@
 
 :root {
   --color-light-blue: #01d5ff;
+  --color-button-blue: #04c7ef;
   --color-light-orange: #ed7957;
   --color-dark-gray: #3c5d67;
   --color-darker-gray: #47474f;
-  --color-dark-blue: #0b1f39;
+  --color-dark-blue: #0b1f59;
   --color-white: #fff;
 }
 

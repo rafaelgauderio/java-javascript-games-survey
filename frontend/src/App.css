@@ -4,12 +4,17 @@
 :root {
   --color-light-blue: #01d5ff;
   --color-button-blue: #04c7ef;
+  --color-turquise: #40e0d0;
   --color-light-orange: #ed7957;
-  --color-dark-gray: #3c5d67;
-  --color-darker-gray: #47474f;
+  --color-dark-gray: #4c5d69;
+  --color-darker-gray: #37475f;
   --color-dark-blue: #0b1f59;
   --color-white: #fff;
+  --color-black: #000;
+  --color-silver: silver;
+  --color-light-withe: #e1e1e1;
 }
+
 
 body,
 html {

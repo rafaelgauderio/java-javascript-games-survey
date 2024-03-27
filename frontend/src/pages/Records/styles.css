@@ -1,5 +1,106 @@
-h2 {
-  font-size: 50px;
-  text-align: center;
+.page-container {
+  width: 85%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding-top: 50px;
+}
+
+.filters-container.record-actions {
+  justify-content: flex-end;
+}
+
+.records-table {
+  width: 100%;
+  border-bottom: 10px solid var(--color-light-blue);
+  border-radius: 0 0 10px 10px;  
+}
+
+.records-table thead {
+  background-color: var(--color-light-blue);
+  color: var(--color-dark-blue);
+  border-radius: 10px;
+  text-align: left;  
+}
+
+.records-table thead tr {
+  height: 60px;
+  background-color: black;
+}
+
+.records-table thead th:first-child {
+  padding-left: 60px;
+  border-top-left-radius: 10px;
+}
+
+.records-table thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+.records-table tbody td:first-child {
+  padding-left: 60px;
+}
+
+.records-table tbody tr {
+  height: 40px;
   color: var(--color-white);
+  font-size: 19px;
+}
+
+.records-table tbody tr:nth-child(odd) {
+  background-color: var(--color-dark-gray);
+}
+
+.records-table tbody tr:nth-child(even) {
+  background-color: var(--color-darker-gray);
+}
+
+.filters-container {
+  background-color: var(--color-dark-gray);
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 15px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+}
+
+.filters-container input {
+  height: 44px;
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--color-silver);
+  border: 1px solid var(--color-light-white);
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-right: 20px;
+  padding-left: 15px;
+}
+
+.filters-container input:focus {
+  outline: none;
+}
+
+.filters-container button {
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 13px 60px;
+}
+
+.filters-container .clean-filters {
+  background-color: var(--color-light-orange);
+  color: var(--color-white);
+  margin-left: 20px;
+}
+
+.filters-container .clean-filters:hover {
+  background-color: var(--color-orange);
+}
+
+.filters-container .action-filters {
+  background-color: var(--color-light-blue);
+  color: var(--color-dark-blue);
+}
+
+.filters-container .action-filters:hover {
+  background-color: var(--color-turcoisa);
 }

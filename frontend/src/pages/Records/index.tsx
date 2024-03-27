@@ -1,15 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./styles.css";
 import axios from 'axios';
+import { RecordsResponse } from "../../types";
 
 const BASE_URL = 'http://localhost:8080';
 const RECORDS_PATH = 'records';
 
 function Records() {
 
+    const [recordsResponse, setRecordsResponse] = useState<RecordsResponse>();
+
     useEffect(() => {
         axios.get(`${BASE_URL}/${RECORDS_PATH}?linesPerPage=12`)
-            .then((resposta) => console.log(resposta));
+            //.then((resposta) => console.log(resposta));
+            .then((response) => setRecordsResponse(response.data));
     }, []);
 
     return (
@@ -24,22 +28,20 @@ function Records() {
                     <th>NOME DO JOGO</th>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>23/12/2023</td>
-                        <td>Rafael de Luca</td>
-                        <td>35</td>
-                        <td>PLAYSTATION</td>
-                        <td>Ação - Aventura</td>
-                        <td>Super Mario Brothers</td>
-                    </tr>
-                    <tr>
-                        <td>23/12/2023</td>
-                        <td>Rafael de Luca</td>
-                        <td>35</td>
-                        <td>PLAYSTATION</td>
-                        <td>Ação - Aventura</td>
-                        <td>Super Mario Brothers</td>
-                    </tr>
+                    {
+                        recordsResponse?.content.map(
+                            registro => (
+                                <tr key={registro.id}>
+                                    <td>{registro.moment}</td>
+                                    <td>{registro.name}</td>
+                                    <td>{registro.age}</td>
+                                    <td>{registro.gamePlatform}</td>
+                                    <td>{registro.genreName}</td>
+                                    <td>{registro.gameTitle}</td>
+                                </tr>
+                            )
+                        )
+                    }
                 </tbody>
             </table>
         </div>

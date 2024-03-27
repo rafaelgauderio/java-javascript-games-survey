@@ -3,7 +3,7 @@
   height: 80px;
   position: absolute; 
   margin: 0;
-  bottom: 0;  
+  bottom: -49px;  
   left: 0;
   background-color: var(--color-darker-gray);    
   padding-top: 20px;  
@@ -21,10 +21,10 @@
   color: var(--color-white);
 }
 
-@media (max-width: 1450px) {
+@media (max-width: 1850px) {
   .footer {
     position: relative; 
-    margin-top: 20px;  
+    margin-top: 20px;     
   }
 }
 

@@ -11,12 +11,17 @@ const RECORDS_PATH = 'records';
 function Records() {
 
     const [recordsResponse, setRecordsResponse] = useState<RecordsResponse>();
+    const [activePage, setActivePage] = useState(0);
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/${RECORDS_PATH}?linesPerPage=12`)
+        axios.get(`${BASE_URL}/${RECORDS_PATH}?linesPerPage=12&page=${activePage}`)
             //.then((resposta) => console.log(resposta));
             .then((response) => setRecordsResponse(response.data));
-    }, []);
+    }, [activePage]);
+
+    function handlePageChange(index: number) {
+        setActivePage(index);
+    }
 
     return (
         <div className="page-container">
@@ -47,9 +52,14 @@ function Records() {
                         )
                     }
                 </tbody>
-            </table>            
-                <Pagination></Pagination>          
-        </div>
+            </table>
+            <Pagination
+                activePage={activePage}
+                goToPageNumber={handlePageChange}
+                totalPages={recordsResponse?.totalPages}
+
+            ></Pagination>
+        </div >
     );
 }
 

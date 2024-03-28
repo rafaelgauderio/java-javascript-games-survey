@@ -12,7 +12,7 @@ export type RecordItem = {
 
 export type RecordsResponse = {
     content: RecordItem[];
-    totalPage: number; 
+    totalPages: number; 
     numberOfElements?:number;
     last?: boolean;
     first?: boolean;

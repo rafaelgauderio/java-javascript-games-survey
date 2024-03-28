@@ -18,14 +18,16 @@ function Records() {
 
     return (
         <div className="page-container">
-            <table className="records-table" cellSpacing={"0"} cellPadding={"5"}>
+            <table className="records-table" cellSpacing={"0"} cellPadding={"0"}>
                 <thead>
-                    <th>DATA-HORA</th>
-                    <th>NOME</th>
-                    <th>IDADE</th>
-                    <th>PLATAFORMA</th>
-                    <th>GÊNERO</th>
-                    <th>NOME DO JOGO</th>
+                    <tr>
+                        <th>DATA-HORA</th>
+                        <th>NOME</th>
+                        <th>IDADE</th>
+                        <th>PLATAFORMA</th>
+                        <th>GÊNERO</th>
+                        <th>NOME DO JOGO</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {

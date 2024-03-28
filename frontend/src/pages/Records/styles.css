@@ -23,8 +23,7 @@
 }
 
 .records-table thead tr {
-  height: 60px;
-  background-color: black;
+  height: 45px;  
 }
 
 .records-table thead th:first-child {

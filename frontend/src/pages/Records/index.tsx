@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
 import axios from 'axios';
-import { RecordsResponse } from "../../types";
+import { RecordsResponse } from "../../utils/types";
+import { formatDate } from "../../utils/helpers";
 
 const BASE_URL = 'http://localhost:8080';
 const RECORDS_PATH = 'records';
@@ -34,7 +35,7 @@ function Records() {
                         recordsResponse?.content.map(
                             registro => (
                                 <tr key={registro.id}>
-                                    <td>{registro.moment}</td>
+                                    <td>{formatDate(registro.moment)}</td>
                                     <td>{registro.name}</td>
                                     <td>{registro.age}</td>
                                     <td className="text-secondary">{registro.gamePlatform}</td>

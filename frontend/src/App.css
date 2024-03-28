@@ -4,7 +4,7 @@
 :root {
   --color-light-blue: #01d5ff;
   --color-button-blue: #04c7ef;
-  --color-turquise: #40e0d0;
+  --color-turquoise: #40e0d0;
   --color-light-orange: #ed7957;
   --color-dark-gray: #4c5d69;
   --color-darker-gray: #37475f;
@@ -41,6 +41,10 @@ a {
 
 .text-secondary {
   color: var(--color-light-orange);
+}
+
+.text-tertiary {
+  color: var(--color-turquoise);
 }
 
 button {

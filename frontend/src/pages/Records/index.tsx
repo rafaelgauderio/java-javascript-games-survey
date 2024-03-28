@@ -37,9 +37,9 @@ function Records() {
                                     <td>{registro.moment}</td>
                                     <td>{registro.name}</td>
                                     <td>{registro.age}</td>
-                                    <td>{registro.gamePlatform}</td>
-                                    <td>{registro.genreName}</td>
-                                    <td>{registro.gameTitle}</td>
+                                    <td className="text-secondary">{registro.gamePlatform}</td>
+                                    <td className="text-tertiary">{registro.genreName}</td>
+                                    <td className="text-primary">{registro.gameTitle}</td>
                                 </tr>
                             )
                         )

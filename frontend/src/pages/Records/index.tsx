@@ -3,6 +3,7 @@ import "./styles.css";
 import axios from 'axios';
 import { RecordsResponse } from "../../utils/types";
 import { formatDate } from "../../utils/helpers";
+import Pagination from "../../components/Pagination";
 
 const BASE_URL = 'http://localhost:8080';
 const RECORDS_PATH = 'records';
@@ -46,7 +47,8 @@ function Records() {
                         )
                     }
                 </tbody>
-            </table>
+            </table>            
+                <Pagination></Pagination>          
         </div>
     );
 }

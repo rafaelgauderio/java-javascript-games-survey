@@ -1,10 +1,13 @@
+import Filters from '../../components/Filters';
 import './styles.css';
 
 function Graphics() {
 
     return (
-        <div>
-            Graficos dos games
+        <div className="page-container">
+            <Filters
+                link={"/records"}
+                linkMessage={'EXIBIR TABELA'}></Filters>
         </div>
 
     );

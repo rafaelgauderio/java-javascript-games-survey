@@ -12,8 +12,20 @@ export type RecordItem = {
 
 export type RecordsResponse = {
     content: RecordItem[];
-    totalPages: number; 
-    numberOfElements?:number;
+    totalPages: number;
+    numberOfElements?: number;
     last?: boolean;
     first?: boolean;
 }
+
+export type Game = {
+    id: number,
+    title: string,
+    platform: Platform;
+}
+
+export type GraphicItem = {
+    x: string;
+    y: number;
+}
+

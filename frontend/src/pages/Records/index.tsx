@@ -4,6 +4,7 @@ import axios from 'axios';
 import { RecordsResponse } from "../../utils/types";
 import { formatDate } from "../../utils/helpers";
 import Pagination from "../../components/Pagination";
+import { Link } from "react-router-dom";
 
 const BASE_URL = 'http://localhost:8080';
 const RECORDS_PATH = 'records';
@@ -25,6 +26,13 @@ function Records() {
 
     return (
         <div className="page-container">
+            <div className="filters-container record-actions">
+                <Link to="/graphics">
+                    <button className="action-filters">
+                        GERAR GRÁFICOS
+                    </button>
+                </Link>
+            </div>
             <table className="records-table" cellSpacing={"0"} cellPadding={"0"}>
                 <thead>
                     <tr>
@@ -52,7 +60,7 @@ function Records() {
                         )
                     }
                 </tbody>
-            </table>            
+            </table>
             <Pagination
                 activePage={activePage}
                 goToPageNumber={handlePageChange}

@@ -2,7 +2,7 @@
   width: 85%;
   margin: 0 auto;
   margin-bottom: 50px;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .filters-container.record-actions {
@@ -106,5 +106,5 @@
 }
 
 .filters-container .action-filters:hover {
-  background-color: var(--color-turquise);
+  background-color: var(--color-turquoise);
 }

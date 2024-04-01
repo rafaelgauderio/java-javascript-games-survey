@@ -52,7 +52,7 @@ function Records() {
                         )
                     }
                 </tbody>
-            </table>
+            </table>            
             <Pagination
                 activePage={activePage}
                 goToPageNumber={handlePageChange}

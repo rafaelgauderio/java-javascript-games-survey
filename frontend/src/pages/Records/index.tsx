@@ -4,6 +4,7 @@ import axios from 'axios';
 import { RecordsResponse } from "../../utils/types";
 import { formatDate } from "../../utils/helpers";
 import Pagination from "../../components/Pagination";
+import Filters from "../../components/Filters";
 
 const BASE_URL = 'http://localhost:8080';
 const RECORDS_PATH = 'records';
@@ -25,6 +26,10 @@ function Records() {
 
     return (
         <div className="page-container">
+            <Filters
+                link={"/graphics"}
+                linkMessage="EXIBIR GRÁFICOS"
+            ></Filters>
             <table className="records-table" cellSpacing={"0"} cellPadding={"0"}>
                 <thead>
                     <tr>

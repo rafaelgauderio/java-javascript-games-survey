@@ -2,7 +2,7 @@
   width: 85%;
   margin: 0 auto;
   margin-bottom: 50px;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .filters-container.record-actions {
@@ -12,18 +12,18 @@
 .records-table {
   width: 100%;
   border-bottom: 10px solid var(--color-light-blue);
-  border-radius: 0 0 10px 10px;  
+  border-radius: 0 0 10px 10px;
 }
 
 .records-table thead {
   background-color: var(--color-light-blue);
   color: var(--color-dark-blue);
   border-radius: 10px;
-  text-align: left;  
+  text-align: left;
 }
 
 .records-table thead tr {
-  height: 45px;  
+  height: 45px;
 }
 
 .records-table thead th:first-child {
@@ -43,6 +43,11 @@
   height: 40px;
   color: var(--color-white);
   font-size: 19px;
+  transition: 0.1s;
+}
+
+.records-table tbody tr:hover {
+   transform: scaley(1.2);
 }
 
 .records-table tbody tr:nth-child(odd) {
@@ -101,5 +106,5 @@
 }
 
 .filters-container .action-filters:hover {
-  background-color: var(--color-turquise);
+  background-color: var(--color-turquoise);
 }

@@ -1,6 +1,8 @@
 .pagination-container {
   margin-top: 40px;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .pagination-item {
@@ -32,4 +34,15 @@
   background-color: var(--color-dark-gray);
   border: 2px solid var(--color-light-orange);
   transform: scale(1.1);
+}
+
+@media (max-width: 992px) {
+  .pagination-container {
+    flex-wrap: wrap;  
+    justify-content: flex-start;    
+  }
+
+  .pagination-container button {
+    margin-bottom: 20px;
+  }
 }

@@ -3,6 +3,8 @@ import './styles.css';
 import Chart from 'react-apexcharts';
 import { barOptions } from '../../utils/graphic-options';
 
+import {pieOptions} from "../../utils/graphic-options";
+
 export const graphicData = [
     {
         x: "Rafael",
@@ -13,7 +15,7 @@ export const graphicData = [
     }
 ]
 
-function Graphics () {
+function Graphics() {
 
     return (
         <>
@@ -34,6 +36,24 @@ function Graphics () {
                                 height="200"
                                 series={[{ data: graphicData }]}
                             />
+                        </div>
+                    </div>
+                    <div className="pie-graphics">
+                        <div className="pie-platform-graphic">
+                            <h2 className="pie-graphic-title">
+                                Plataformas
+                            </h2>
+                            <Chart                                 
+                                options={{...pieOptions, labels:["Rafael", "Cláudia", "Larissa"]}}
+                                type="pie"
+                                widht="400"                              
+                                series={[20,30,50]}                                
+                            ></Chart>
+                        </div>
+                        <div className="pie-gender-graphic">
+                            <h2 className="pie-graphic-title">
+                                Gêneros
+                            </h2>
                         </div>
                     </div>
                 </div>

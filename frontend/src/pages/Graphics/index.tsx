@@ -5,6 +5,7 @@ import { barOptions } from '../../utils/graphic-options';
 
 import {pieOptions} from "../../utils/graphic-options";
 
+
 export const graphicData = [
     {
         x: "Rafael",
@@ -15,7 +16,18 @@ export const graphicData = [
     }
 ]
 
-function Graphics() {
+
+type barChartData = {
+    x: string;
+    y: number;
+}
+
+type PieChartData = {
+    labels: string [];
+    series: number [];
+}
+
+function Graphics() {    
 
     return (
         <>

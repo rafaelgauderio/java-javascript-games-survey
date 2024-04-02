@@ -49,6 +49,17 @@ export const barOptions = {
 };
 
 export const pieOptions = {
+  responsive: [{
+    breakpoint: 576,
+    options: {
+      chart: {
+        width: 250
+      },
+      legend: {
+        position: 'bottom'
+      }
+    }
+  }],
   chart: {
     background: "transparent",
     foreColor: "red",
@@ -66,17 +77,17 @@ export const pieOptions = {
     offsetY: "100px",
     style: {
       colors: ["#006a89", "#ed7947", "#00D4FF", "#ffd6a5"],
-      fontSize: "20px",
+      fontSize: "25px",
       fontFamily: "Play, sans-serif",
       fontWeight: 700,
-    }
-  },
+    }    
+  }, 
   plotOptions: {
     pie: {
-      customScale: 0.7,
+      customScale: 0.8,
       expandOnClick: false,
       dataLabels: {
-        offset: 60,
+        offset: 70,
       },
     },
   },

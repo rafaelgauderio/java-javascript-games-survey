@@ -54,6 +54,12 @@ function Graphics() {
                             <h2 className="pie-graphic-title">
                                 Gêneros
                             </h2>
+                            <Chart                                 
+                                options={{...pieOptions, labels:["RPG", "Aventura", "Tiro"]}}
+                                type="pie"
+                                widht="400"                              
+                                series={[25,50,25]}                                
+                            ></Chart>
                         </div>
                     </div>
                 </div>

@@ -4,17 +4,20 @@ export const barOptions = {
       show: false,
     },
   },
-  colors: ["#ed7957"],
+  colors: ["#40e0d0"],
   grid: {
-    show: true,
+    show: false,
   },
+  
   plotOptions: {
     bar: {
       horizontal: true,
+      borderRadius: 10,
       endingShape: "rounded",
       startingShape: "rounded",
-      barHeight: "50px",
-    },
+      barHeight: "50px", 
+      barWidht: "200px"    
+    }
   },
   dataLabels: {
     enabled: true,
@@ -30,20 +33,20 @@ export const barOptions = {
       show: false,
     },
     axisTicks: {
-      show: true,
+      show: false,
     },
   },
   yaxis: [
     {
       labels: {
-        maxWidth: 360,
+        maxWidth: 300,
         style: {
           colors: "#04c7ef",
-          fontSize: "19px",
+          fontSize: "16px",
           fontFamily: "Play, sans-serif",
           fontWeight: 400,
         },
-      },
+      },      
     },
   ],
 };
@@ -80,11 +83,11 @@ export const pieOptions = {
       fontSize: "25px",
       fontFamily: "Play, sans-serif",
       fontWeight: 700,
-    }    
-  }, 
+    }
+  },
   plotOptions: {
     pie: {
-      customScale: 0.8,
+      customScale: 0.7,
       expandOnClick: false,
       dataLabels: {
         offset: 70,

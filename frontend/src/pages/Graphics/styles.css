@@ -1,6 +1,7 @@
 .graphic-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; 
+  
 }
 
 .top-related {
@@ -11,7 +12,7 @@
   flex: 1;
 }
 
-.top-related-title {
+.top-related-title h1 {
   font-size: 35px;
   color: var(--color-white);
   font-family: play;
@@ -48,8 +49,7 @@
 }
 
 .games-container {
-  display: flex;
-  justify-content: center;
+  display: inline;    
 }
 
 .games-list {

@@ -6,14 +6,14 @@ export const barOptions = {
   },
   colors: ["#ed7957"],
   grid: {
-    show: false,
+    show: true,
   },
   plotOptions: {
     bar: {
       horizontal: true,
       endingShape: "rounded",
       startingShape: "rounded",
-      barHeight: "60px",
+      barHeight: "50px",
     },
   },
   dataLabels: {
@@ -30,7 +30,7 @@ export const barOptions = {
       show: false,
     },
     axisTicks: {
-      show: false,
+      show: true,
     },
   },
   yaxis: [
@@ -46,5 +46,50 @@ export const barOptions = {
       },
     },
   ],
+};
+
+export const pieOptions = {
+  responsive: [{
+    breakpoint: 576,
+    options: {
+      chart: {
+        width: 250
+      },
+      legend: {
+        position: 'bottom'
+      }
+    }
+  }],
+  chart: {
+    background: "transparent",
+    foreColor: "red",
+  },
+  colors: ["#006a89", "#ed7947", "#00D4FF", "#ffd6a5"],
+  legend: {
+    show: false,
+  },
+  tooltip: {
+    enabled: true,
+  },
+  labels: {
+    enabled: true,
+    offsetX: "100px",
+    offsetY: "100px",
+    style: {
+      colors: ["#006a89", "#ed7947", "#00D4FF", "#ffd6a5"],
+      fontSize: "25px",
+      fontFamily: "Play, sans-serif",
+      fontWeight: 700,
+    }    
+  }, 
+  plotOptions: {
+    pie: {
+      customScale: 0.8,
+      expandOnClick: false,
+      dataLabels: {
+        offset: 70,
+      },
+    },
+  },
 };
 

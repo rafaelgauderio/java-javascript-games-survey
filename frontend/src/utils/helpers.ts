@@ -8,7 +8,7 @@ export function formatDate(date: string) {
 }
 // formato universal aceito para formatar datas
 
-export const buildBarSeries = (games: Game[], records: RecordItem[]) => {
+export const buildBarGraphicSeries = (games: Game[], records: RecordItem[]) => {
     const mappedGames = games.map(game => {
       const filteredGames = records.filter(item => {
         return item.gameTitle === game.title && item.gamePlatform === game.platform
@@ -25,10 +25,10 @@ export const buildBarSeries = (games: Game[], records: RecordItem[]) => {
       return b.y - a.y;
     });
   
-    return sortedGames.slice(0, 8);
+    return sortedGames.slice(0, 9);
   };
   
-  export const getPlatformChartData = (records: RecordItem[]) => {
+  export const getPlatformGraphicData = (records: RecordItem[]) => {
     const platforms = ["PC", "PLAYSTATION", "XBOX", "WII", "ATARI"];
   
     const series = platforms.map(platform => {
@@ -45,7 +45,7 @@ export const buildBarSeries = (games: Game[], records: RecordItem[]) => {
     };
   };
   
-  export const getGenderChartData = (records: RecordItem[]) => {
+  export const getGenderGraphicData = (records: RecordItem[]) => {
      const genderByAmount = records.reduce((accumulator, currentValue) => {
        if (accumulator[currentValue.genreName] !== undefined) {
          accumulator[currentValue.genreName] += 1;

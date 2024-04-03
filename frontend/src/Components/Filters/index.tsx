@@ -7,13 +7,30 @@ type Props = {
 
 function Filters({ link, linkMessage }: Props) {
     return (
-        <div className="filters-container record-actions">
-            <Link to={link}>
-                <button className="action-filters">
-                    {linkMessage}
-                </button>
-            </Link>
-        </div>
+        <>
+
+
+            <div className="filters-container record-actions">
+                <div>
+                    <input
+                        type="text"
+                        placeholder="Data Inicial">
+                    </input>
+                    <input
+                        type="text"
+                        placeholder="Data Final">
+                    </input>
+                    <button className="clean-filters">
+                        LIMPAR PESQUISA
+                    </button>
+                </div>
+                <Link to={link}>
+                    <button className="action-filters">
+                        {linkMessage}
+                    </button>
+                </Link>
+            </div>
+        </>
     );
 }
 

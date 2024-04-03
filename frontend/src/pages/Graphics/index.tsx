@@ -6,7 +6,7 @@ import { barOptions } from '../../utils/graphic-options';
 import { pieOptions } from "../../utils/graphic-options";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { buildBarGraphicSeries } from '../../utils/helpers';
+import { buildBarGraphicSeries, getPlatformGraphicData } from '../../utils/helpers';
 
 /*
 export const graphicData = [
@@ -57,10 +57,16 @@ function Graphics() {
             let gamesResponse = await axios.get(`${GAMES_ENDPOINT}`);
             let recordsResponse = await axios.get(`${RECORDS_ENDPOINT}`);
 
-            //console.log(gamesResponse.data);
-            //console.log(recordsResponse.data.content);
-            const barGraphicData = buildBarGraphicSeries(gamesResponse.data, recordsResponse.data.content)
+            let gamesResponseData = gamesResponse.data;
+            let recordsResponseData = recordsResponse.data.content;
+
+            const barGraphicData = buildBarGraphicSeries(gamesResponseData, recordsResponseData);
             setBarGraphicData(barGraphicData);
+
+            const platformGraphicData = getPlatformGraphicData(recordsResponseData);
+            setPieGraphicPlatformData(platformGraphicData);
+
+
 
         }
 

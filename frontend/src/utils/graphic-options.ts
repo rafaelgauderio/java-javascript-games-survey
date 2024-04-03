@@ -44,7 +44,7 @@ export const barOptions = {
           colors: "#04c7ef",
           fontSize: "16px",
           fontFamily: "Play, sans-serif",
-          fontWeight: 400,
+          fontWeight: 700,
         },
       },      
     },
@@ -87,10 +87,10 @@ export const pieOptions = {
   },
   plotOptions: {
     pie: {
-      customScale: 0.7,
-      expandOnClick: false,
+      customScale: 0.9,
+      expandOnClick: true,
       dataLabels: {
-        offset: 70,
+        offset: 50,
       },
     },
   },

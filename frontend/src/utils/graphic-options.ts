@@ -4,7 +4,7 @@ export const barOptions = {
       show: false,
     },
   },
-  colors: ["#40e0d0"],
+  colors: ["#006a89"],
   grid: {
     show: false,
   },
@@ -87,7 +87,7 @@ export const pieOptions = {
   },
   plotOptions: {
     pie: {
-      customScale: 0.9,
+      customScale: 0.85,
       expandOnClick: true,
       dataLabels: {
         offset: 50,

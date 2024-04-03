@@ -6,7 +6,7 @@ import { barOptions } from '../../utils/graphic-options';
 import { pieOptions } from "../../utils/graphic-options";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { buildBarGraphicSeries, getPlatformGraphicData } from '../../utils/helpers';
+import { buildBarGraphicSeries, getGenderGraphicData, getPlatformGraphicData } from '../../utils/helpers';
 
 /*
 export const graphicData = [
@@ -66,7 +66,8 @@ function Graphics() {
             const platformGraphicData = getPlatformGraphicData(recordsResponseData);
             setPieGraphicPlatformData(platformGraphicData);
 
-
+            const genderGraphicData = getGenderGraphicData(recordsResponseData);
+            setPieGraphicGenderData(genderGraphicData);
 
         }
 

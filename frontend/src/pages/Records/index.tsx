@@ -26,10 +26,12 @@ function Records() {
 
     return (
         <div className="page-container">
+           
             <Filters
                 link={"/graphics"}
                 linkMessage="EXIBIR GRÁFICOS"
             ></Filters>
+
             <table className="records-table" cellSpacing={"0"} cellPadding={"0"}>
                 <thead>
                     <tr>

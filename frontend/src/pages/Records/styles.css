@@ -5,7 +5,7 @@
   padding-top: 30px;  
 }
 
-.filters-container.record-actions {
+.filters-container .record-actions {
   justify-content: flex-end;
 }
 
@@ -76,7 +76,7 @@
   border-radius: 10px;
   box-sizing: border-box;
   margin-right: 20px;
-  padding-left: 15px;
+  padding-left: 15px;  
 }
 
 .filters-container input:focus {
@@ -87,7 +87,8 @@
   font-weight: bold;
   font-size: 16px;
   border-radius: 10px;
-  padding: 13px 60px;
+  padding: 10px 60px;
+  height: 44px;  
 }
 
 .filters-container .clean-filters {
@@ -97,7 +98,7 @@
 }
 
 .filters-container .clean-filters:hover {
-  background-color: var(--color-orange);
+  background-color: var(--color-dark-orange);
 }
 
 .filters-container .action-filters {

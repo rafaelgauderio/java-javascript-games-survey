@@ -6,8 +6,8 @@ export default function Header() {
     return (
         <View style={headerStyles.header}>
             <Image style={headerStyles.tinyLogo} source={require('../../images/logo.png')} ></Image>
-            <Text style={headerStyles.textFirst}>Site Gamey</Text>
-            <Text style={headerStyles.textSecond}>Surver</Text>
+            <Text style={headerStyles.textFirst}>Site Game</Text>
+            <Text style={headerStyles.textSecond}>Survey</Text>
         </View>
     );
 }

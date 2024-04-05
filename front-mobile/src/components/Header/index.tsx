@@ -1,32 +1,45 @@
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, View, Image } from 'react-native';
 import React from 'react';
 
 export default function Header() {
 
     return (
-        <Text style={styles.text}>Header</Text>
+        <View style={headerStyles.header}>
+            <Image style={headerStyles.tinyLogo} source={require('../../images/logo.png')} ></Image>
+            <Text style={headerStyles.textFirst}>Site Gamey</Text>
+            <Text style={headerStyles.textSecond}>Surver</Text>
+        </View>
     );
 }
 
-const styles = StyleSheet.create({
-  
-    text: {
-        display: 'flex',
-        color: 'silver',
-        fontSize: 35,
-        fontFamily: 'Arial Black',
-        justifyContent: "center",
-        alignItems: 'center',
-        textShadowColor: 'thistle',
-        textShadowOffset: { width: 5, height: 5 },
-        textShadowRadius: 10,
-        borderWidth: 4,
-        borderColor: "thistle",
-        borderRadius: 20,
-        marginHorizontal: 10,
-        marginVertical: 20,
-        padding: 20,
-        textAlign: 'center'
+const headerStyles = StyleSheet.create({
 
-    }
+
+    header: {
+        height: 90,
+        backgroundColor: '#37474F',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+    textFirst: {
+        fontWeight: 'bold',
+        fontSize: 20,
+        fontFamily: "Play_700Bold",
+        color: '#ED7947',
+        marginLeft: 10,
+        marginRight: 5,
+    },
+    textSecond: {
+        fontWeight: 'bold',
+        fontFamily: "Play_700Bold",
+        fontSize: 19,
+        color: '#FFF'
+    },
+    tinyLogo: {
+        width: 30,
+        height: 30,
+    },
+
 });
